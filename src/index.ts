@@ -1,7 +1,8 @@
 import dotenv from "dotenv";
 import { Scripts } from "@bconnorwhite/package/build/types";
 import { getPackage } from "@bconnorwhite/package";
-import run from "package-run";
+import { getCommand as getExecCommand } from "package-run";
+import exec from "@bconnorwhite/exec";
 
 type Matches = {
   exact?: boolean;
@@ -28,7 +29,7 @@ function match(scripts: Scripts = {}, script: string) {
   return matches;
 }
 
-const runEnv = (script: string) => {
+export function getCommand(script: string) {
   const env = dotenv.config().parsed;
   const NODE_ENV = (dotenv.config().parsed?.NODE_ENV) ?? process.env.NODE_ENV ?? "";
   const { scripts } = getPackage();
@@ -40,9 +41,20 @@ const runEnv = (script: string) => {
   });
   const command = key ? matches.env[key] : (matches.exact && script);
   if(command) {
-    run({
+    return {
       command,
       env
+    }
+  } else {
+    return undefined;
+  }
+}
+
+const runEnv = async (script: string) => {
+  const command = getCommand(script);
+  if(command) {
+    return getExecCommand(command).then((execCommand) => {
+      return exec(execCommand);
     });
   } else {
     throw new Error(`No match was found for "${script}"`);
