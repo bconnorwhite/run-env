@@ -13,7 +13,7 @@ Assume the following package.json:
 },
 ...
 ```
-This will run any script that ends with `:${NODE_ENV}`. If there is no match, it will also accept suffixes that match the start of NODE_ENV (ex: `build:dev` will match `NODE_ENV=development`). As a final fallback, an exact match will be run.
+This will run any script that ends with `:${NODE_ENV}`. If there is no match, it will also accept suffixes that match at least the first 3 characters of NODE_ENV (ex: `build:dev` will match `NODE_ENV=development`). As a final fallback, an exact match will be run.
 ```bash
 yarn run-env build
 

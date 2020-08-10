@@ -36,7 +36,7 @@ const runEnv = (script: string) => {
   let key = Object.keys(matches.env).find((environment) => {
     return NODE_ENV === environment;
   }) ?? Object.keys(matches.env).find((prefix) => {
-    return NODE_ENV.startsWith(prefix);
+    return NODE_ENV.startsWith(prefix) && prefix.length >= 3;
   });
   const command = key ? matches.env[key] : (matches.exact && script);
   if(command) {
