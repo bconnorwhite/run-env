@@ -1,6 +1,6 @@
 {
   "name": "@bconnorwhite/run-env",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Run package.json scripts suffixed with NODE_ENV.",
   "author": "Connor White",
   "license": "MIT",
