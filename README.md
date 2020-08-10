@@ -27,7 +27,7 @@ Additionally, and environment variables listed in `.env` will be loaded before r
 #### Programmatic Usage
 
 ```ts
-runEnv(script: string) => void;
+runEnv(script: string) => Promise<SpawnSyncReturns<Buffer>>;
 ```
 
 ```ts
