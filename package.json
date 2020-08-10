@@ -33,11 +33,12 @@
     "@bconnorwhite/exec": "^3.0.3",
     "@bconnorwhite/package": "^2.2.0",
     "dotenv": "^8.2.0",
-    "package-run": "^1.1.1"
+    "package-run": "^1.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-typescript": "^7.10.4",
     "@types/node": "^14.0.27",
