@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "@bconnorwhite/exec": "^4.0.0",
-    "@bconnorwhite/package": "^3.0.0",
+    "@bconnorwhite/package": "^3.0.1",
     "dotenv": "^8.2.0",
-    "package-run": "^1.1.6"
+    "package-run": "^1.1.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",
