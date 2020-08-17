@@ -30,10 +30,10 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@bconnorwhite/exec": "^3.0.3",
-    "@bconnorwhite/package": "^2.2.2",
+    "@bconnorwhite/exec": "^4.0.0",
+    "@bconnorwhite/package": "^3.0.0",
     "dotenv": "^8.2.0",
-    "package-run": "^1.1.4"
+    "package-run": "^1.1.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",

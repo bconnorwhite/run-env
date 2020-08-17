@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
-import { Scripts } from "@bconnorwhite/package/build/types";
-import { getPackage } from "@bconnorwhite/package";
+import { pkg } from "@bconnorwhite/package";
+import { Scripts } from "@bconnorwhite/package/build/package-json/types";
 import { getCommand as getExecCommand } from "package-run";
 import exec from "@bconnorwhite/exec";
 
@@ -32,7 +32,7 @@ function match(scripts: Scripts = {}, script: string) {
 export function getCommand(script: string) {
   const env = dotenv.config().parsed;
   const NODE_ENV = (dotenv.config().parsed?.NODE_ENV) ?? process.env.NODE_ENV ?? "";
-  const { scripts } = getPackage();
+  const { scripts } = pkg;
   const matches = match(scripts, script);
   let key = Object.keys(matches.env).find((environment) => {
     return NODE_ENV === environment;
